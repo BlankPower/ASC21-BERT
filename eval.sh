@@ -1,0 +1,14 @@
+deepspeed --include localhost:0 test_race.py \
+--data_dir ./RACE/test \
+--bert_model ./bert-large-uncased \
+--checkpoint ./result/deepspeed_8GPUs_480batch_size_6epochs \
+--ckpt_id global_step1099 \
+--model_file bert-large-uncased/bert-large-uncased-whole-word-masking-pytorch_model.bin \
+--ckpt_type HF \
+--origin_bert_config_file bert-large-uncased/config.json \
+--deepspeed_transformer_kernel \
+--output_dir ./result \
+--max_seq_length 512 \
+--deepspeed \
+--deepspeed_config ./deepspeed_zero2.json \
+--do_lower_case
