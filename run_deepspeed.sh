@@ -34,7 +34,7 @@ else
        GRAD_ACCUM_STEPS=$((PER_GPU_BATCH_SIZE/MAX_GPU_BATCH_SIZE))
 fi
 JOB_NAME="deepspeed_${NGPU}GPUs_${EFFECTIVE_BATCH_SIZE}batch_size_${NUM_TRAIN_EPOCHS}epochs"
-config_json=deepspeed_zero2.json
+config_json=dp_config.json
 
 run_cmd="deepspeed \
        --master_port=${MASTER_PORT} \
